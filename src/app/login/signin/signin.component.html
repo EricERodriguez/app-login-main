@@ -1,0 +1,9 @@
+<div class="col-4 mx-auto text-center">
+    <form class="form-signin" [formGroup]="loginForm" (ngSubmit)="doSubmit()">
+        <label for="inputUsername" class="sr-only">Username</label>
+        <input class="form-control" id="inputUsername" formControlName="username" type="text">
+        <label for="inputPassword" class="sr-only">Password</label>
+        <input class="form-control" id="inputPassword" formControlName="password" type="password">
+        <button class="btn btn-lg btn-primary btn-block mt-3" type="submit">Sign in</button>
+    </form>
+</div>
