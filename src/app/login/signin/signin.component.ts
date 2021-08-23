@@ -23,14 +23,13 @@ export class SigninComponent implements OnInit {
       username: ['', Validators.required],
       password: ['', Validators.required]
     })
-
   }
 
   doSubmit() {
 
     if (this.loginForm.invalid) {
       alert("Completa todos los campos");
-      return;
+      return ;
     }
 
     const { username, password } = this.loginForm.value
@@ -43,6 +42,7 @@ export class SigninComponent implements OnInit {
         alert(err)
       }
     )
+    this.loginService.saveUser(localStorage.getItem(username))
 
   }
 

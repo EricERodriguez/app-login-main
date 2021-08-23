@@ -20,7 +20,7 @@ export class SignupComponent implements OnInit {
   ngOnInit(): void {
 
     this.registerForm = this.fb.group({
-      email: ['', Validators.required, Validators.email, console.log(`error de mail`)],
+      email: ['', Validators.required, Validators.email],
       username: ['', Validators.required],
       password: ['', Validators.required, Validators.minLength(10)]
     })
@@ -34,8 +34,8 @@ export class SignupComponent implements OnInit {
       return;
     }else{
       alert(`Gracias por registrarse`)
+      this.router.navigateByUrl("/singin")
     }
-    
 
     const { username, password, email } = this.registerForm.value
     this.LoginService.doRegister(username, password, email)
@@ -43,6 +43,7 @@ export class SignupComponent implements OnInit {
     localStorage.setItem( email, email)
     localStorage.setItem( password, password)
     localStorage.setItem( username, username)
+    this.LoginService.saveUser(localStorage.getItem(username))
   }
 
 }

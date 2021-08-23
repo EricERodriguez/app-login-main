@@ -10,7 +10,7 @@ export class MisDatosComponent implements OnInit {
   
 
   constructor(public LoginService: LoginService) {
-    console.log(this.LoginService.saveUser) 
+    console.log(this.LoginService.saveUser)
   }
   ngOnInit(): void {
     
