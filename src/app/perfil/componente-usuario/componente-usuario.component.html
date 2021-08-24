@@ -1,9 +1,21 @@
-  <tr *ngFor="let user of users">
-    <th scope="row">{{user.id}}) </th>
-    <td>Nombre: {{user.name}} </td>
-    <td>Username: {{user.username}} </td>
-    <td>email:  {{user.email}} </td>
-    <td>Phone:  {{user.phone}} </td>
-    <td>
-    </td>
-  </tr>
+
+  <table class="table table-dark table-striped">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Nombre</th>
+        <th scope="col">Username</th>
+        <th scope="col">Email</th>
+        <th scope="col">Phone</th>
+      </tr>
+    </thead>
+    <tbody *ngFor="let user of users">
+      <tr >
+        <th scope="row" class="table-dark" >{{user.id}})</th>
+        <td class="table-dark">{{user.name}}</td>
+        <td class="table-dark">{{user.username}}</td>
+        <td class="table-dark">{{user.email}}</td>
+        <td class="table-dark">{{user.phone}} </td>
+      </tr>
+    </tbody>
+  </table>
